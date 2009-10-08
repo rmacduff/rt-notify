@@ -1,0 +1,35 @@
+== rt-notify ==
+
+Written by Ross Macduff <ross.macduff@gmail.com>
+
+== Licence ==
+
+See license.txt
+
+
+== Introduction ==
+
+rt-notify is a notifier for the Gnome Desktop Notification Area that
+alerts users of Best Practical's Request Tracker (RT) when tickets
+meeting certain conditions arrive.
+
+== Prerequisites ==
+
+* python 
+	- Tested with 2.6, but should work with lesser versions.  
+* notify-python package 
+	- http://www.galago-project.org/files/releases/source/notify-python/
+	- Comes as a package for Debian and Ubuntu (python-notify).
+* rt command line client 
+	- Comes as a package for Debian and Ubuntu.  Also included
+with the RT bundle, I think.
+
+== Configure ==
+
+* RT must be configured with a user name and password (~/.rtrc).  The
+* Gnome Notification Area must be on a panel.  To "install" the script
+* You can add it to the set of startup qpplications (System ->
+Preferences -> Startup Applications).
+
+
+

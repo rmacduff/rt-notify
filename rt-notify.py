@@ -10,11 +10,14 @@ import subprocess
 import re
 import time
 
+QUERY = "\"Owner=\'Nobody\' AND ( Status=\'new\' OR Status=\'open\' ) AND ( Queue!=\'spambin\' AND Queue!=\'maildrop\' AND Queue!=\'learnspam\' )\""
+TIME = 300
+
 if __name__ == '__main__':
     if not pynotify.init("Urgency"):
         sys.exit(1)
 
-    rt_cmd = ['rt ls "Owner=\'Nobody\' AND ( Status=\'new\' OR Status=\'open\') AND ( Queue!=\'spambin\' AND Queue!=\'maildrop\' AND Queue!=\'learnspam\' )"']
+    rt_cmd = ["rt ls " + QUERY]
     rt_img = "file://" + os.path.abspath(os.path.curdir) + "/rt_img.png"
 
     while True:
@@ -32,4 +35,4 @@ if __name__ == '__main__':
                 print "Failed to send notification"
                 sys.exit(1)
             
-        time.sleep(300)
+        time.sleep(TIME)

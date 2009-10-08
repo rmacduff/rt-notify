@@ -13,6 +13,8 @@ import time
 QUERY = "\"Owner=\'Nobody\' AND ( Status=\'new\' OR Status=\'open\' ) AND ( Queue!=\'spambin\' AND Queue!=\'maildrop\' AND Queue!=\'learnspam\' )\""
 TIME = 60
 KEEP_STATE = True
+RT_CLI = "/usr/bin/rt-3.6"
+
 
 seen_queue = []
 
@@ -20,7 +22,7 @@ if __name__ == '__main__':
     if not pynotify.init("Urgency"):
         sys.exit(1)
 
-    rt_cmd = ["rt ls " + QUERY]
+    rt_cmd = [RT_CLI + " ls " + QUERY]
     rt_img = "file://" + os.path.abspath(os.path.curdir) + "/rt_img.png"
 
     while True:

@@ -12,11 +12,11 @@ import re
 import time
 
 QUERY = "\"Owner=\'Nobody\' AND ( Status=\'new\' OR Status=\'open\' ) AND ( Queue!=\'spambin\' AND Queue!=\'maildrop\' AND Queue!=\'learnspam\' )\""
-TIME = 300 # in seconds
+TIME = 30 # in seconds
 KEEP_STATE = True
 RT_CLI = "/usr/bin/rt-3.6"
 _rt_cmd = [RT_CLI + " ls " + QUERY]
-_rt_img = "file://" + os.path.abspath(os.path.curdir) + "/rt_img.png"
+_rt_img = "file://" + os.path.abspath(os.path.dirname(sys.argv[0])) + "/rt_img.png"
 
 seen_queue = []
 out_queue = []
